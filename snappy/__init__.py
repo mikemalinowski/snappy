@@ -1,12 +1,12 @@
+"""
 # Snappy
 
 ## Origins
 ```
-Snappy is an extraction from the Crab ulitity (circa 2019). This version
-has specifically been seperated from any rigging framework and converted 
-to maya.cmds and OpenMaya to ensure it works in Maya 2024, 2025 & 2026. 
-
-You can see the original code here:
+Snappy is an extraction of part of a Crab ulitity from 2019. This version
+has specifically been seperated from any rigging framework and converted to maya.cmds
+and OpenMaya to ensure it works in Maya 2024, 2025 & 2026. You can see the original
+code here:
 https://github.com/mikemalinowski/crab/blob/master/crab/utils/snap.py
 ```
 Snappy is an object snapping tool which allows a user/developer
@@ -23,11 +23,6 @@ to snap simultaneously.
 Snappy comes with a headless set of functions which can be used to define and
 trigger snaps. It also comes with a gui application which can be used by
 riggers or animators to setup snap groups or trigger snap groups.
-
-## Installation
-
-Simply place the snapp folder into the maya/scripts folder then run the 
-code defined in the `User Facing Tool` section.
 
 ## User Facing Tool
 
@@ -46,8 +41,6 @@ right click that snap group and select "snap" to instigate the snap.
 With a pre-existing snap group, you can select a node  you want to snap and a node
 it should snap to and right click the snap group. You can then add this as a new
 snap member of the pre-existing group.
-
-![Snappy Tool](docs/snap_tool.png)
 
 ## Using the snap tools headless
 
@@ -88,3 +81,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+"""
+from .core import new
+from .core import snap
+from .core import snap_group
+from .core import snappable
+from .core import groups
+from .core import members
+
+from . app import launch
+
+__version__ = "1.0.1"
